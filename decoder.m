@@ -31,7 +31,6 @@ function [restored_bit_stream, restored_quantized_signal] = decoder(t, PCM_signa
     end  
 
     restored_q_levels_indices = bit2int(restored_bit_stream',bit_frame_size)';
-    display(restored_q_levels_indices(1:5));
     
     restored_q_levels_indices = restored_q_levels_indices +1;       %so that we get the correct indices starting from 1,2,3,.. again
     restored_quantized_signal = quantization_levels(restored_q_levels_indices);
