@@ -1,35 +1,32 @@
 % Quantization Mode
-% 0 => Mid rise
-% 1 => Mid tread
+    % 0 => Mid rise
+    % 1 => Mid tread
 
 function [quantized_signal, mean_sqr_q_error, bit_stream] = quantizer(input_signal, t, mp_max, mp_min, L, quantization_mode)
     
-    delta = (mp_max-mp_min)/L;
+    delta = (mp_max-mp_min)/L;  %step size
 
     if(quantization_mode == 0)  %mid rise
-        %Quantization levels
-        min_q_level = mp_min+delta/2;
+        %Initializing quantization levels
+        min_q_level = mp_min + delta/2;
         max_q_level = mp_max - delta/2;
         quantization_levels = min_q_level : delta : max_q_level;
         
         %clipping the input signal at the boundries of the quantization
-        %levels
+        %levels === mapping the values outside the boundries of the
+        %quantization levels into these boundries 
         modified_input_signal = max(min_q_level, min(input_signal,max_q_level));
 
-        %Mid rise to mid tread => in order to map the nearst -ve value to
-        %the middle threshold (could be zero, to a -ve value instead of a +ve value)
+        %Mid rise to mid tread => so that we can map the amplitudes between
+        %the middle threshold, in case it = zero (signal amplitudes centered around 0),
+        % and the first quantization level under that threshold
+        % to -ve values instead of +ve values (having correct mapping)
         modified_input_signal = modified_input_signal + delta/2;
         
-        index = fix(modified_input_signal/(delta/2));    %comparing to the threshold
-        index(mod(index,2)~=0) = sign(index(mod(index,2)~=0)).*(abs(index(mod(index,2)~=0))+1);
-        index = index./2;
-        if (min(index)<=0)
-            index = index - min(index)+1;
-        end
-        quantized_signal = quantization_levels(index);
-
+        index = quantization(modified_input_signal, delta);
+        
     elseif(quantization_mode == 1)  %Mid tread
-        %Quantization levels
+        %Initializing quantization levels
         min_q_level = mp_min+delta;
         max_q_level = mp_max;
         quantization_levels = min_q_level : delta : max_q_level;
@@ -38,23 +35,20 @@ function [quantized_signal, mean_sqr_q_error, bit_stream] = quantizer(input_sign
         %levels
         modified_input_signal = max(min_q_level, min(input_signal,max_q_level));
         
-        index = fix(modified_input_signal/(delta/2));    %comparing to the threshold
-        index(mod(index,2)~=0) = sign(index(mod(index,2)~=0)).*(abs(index(mod(index,2)~=0))+1);
-        index = index./2;
-        if (min(index)<=0)
-            index = index - min(index)+1;
-        end
-        quantized_signal = quantization_levels(index);
-        
+        index = quantization(modified_input_signal, delta);
+    else
+        warning('Not valid!');        
     end
     
+    quantized_signal = quantization_levels(index); %the actual quantized signal
+
     %figure of input signal and the quantized signal
     nexttile
     plot(t, input_signal);
     hold on
     stairs(t,quantized_signal);
     legend('Input Signal', 'Quantized Signal');
-    xlabel('t[sec.]');
+    xlabel('t[sec]');
     ylabel('Amplitude');
     title('input signal vs. quantized signal');
 
@@ -66,10 +60,16 @@ function [quantized_signal, mean_sqr_q_error, bit_stream] = quantizer(input_sign
     % here we map the quantization levels indices into binary values
     % represinting the bit stream (since the indices are positive intger, easy to be mapped into binary numbers and vice versa)
     
+    index = index-1;    %for 0 to be included in binary representation of the indices
     bit_frame_size = ceil(log2(L));    %ciel is used in case L is not binary weighted
-    bit_stream = reshape(dec2bin(index,bit_frame_size)',1,[]);
-    display(index(1:10));
+    
+    bit_stream = int2bit(index,bit_frame_size);
+    %display(bit_stream(:, 1:5));
+    bit_stream = reshape(bit_stream, 1, numel(bit_stream));
+    
+    display(index(1:5));
+    display(bit_frame_size);
     display('Bit stream: ');
-    display(bit_stream);
+    display(bit_stream(1:20));
     
 end
