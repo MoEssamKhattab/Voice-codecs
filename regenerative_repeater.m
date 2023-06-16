@@ -1,4 +1,4 @@
-function [regenerated_PCM_signal] = regenerative_repeater(PCM_signal, n, line_code, pulse_amplitude)
+function [regenerated_PCM_signal] = regenerative_repeater(t, PCM_signal, n, line_code, pulse_amplitude)
     
     A = pulse_amplitude; %for simplicity
     bit = zeros(1,n);   %Current bit in the PCM signal
@@ -42,5 +42,9 @@ function [regenerated_PCM_signal] = regenerative_repeater(PCM_signal, n, line_co
         end
     else
         error('Not valid!');
-    end  
+    end
+
+    nexttile
+    plot(t(1: 20*n),regenerated_PCM_signal(1: 20*n));
+    
 end
