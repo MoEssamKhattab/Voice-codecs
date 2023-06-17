@@ -1,22 +1,22 @@
 %%%% Main %%%%
 
 [signal, fm] = audioread('shakal.mp3');
-input_signal = signal(:,1);   % choose only the left channel
+input_signal = signal(:,1);   % choose only the left channel of the input signal
 sound(input_signal, fm);
 fs = 20e2;
 L = 256;
 R = ceil(log2(L));
 quantization_mode  = 0;
-pulse_amplitude = 1;
+pulse_amplitude = 5;
 line_code = 1;
 bit_rate = 1000;
 n = 100;
 downsample_ratio = round(fm/fs);
 
-[sampled_signal] = sampler(input_signal, fm, fs);
+[t, sampled_signal] = sampler(input_signal, fm, fs);
 mp_max = max(sampled_signal);
 mp_min = min(sampled_signal);
-t = linspace(0, length(sampled_signal)*downsample_ratio/fm, length(sampled_signal));
+
 [quantized_signal, mean_sqr_q_error, bit_stream] = quantizer(sampled_signal, t, mp_max, mp_min, L, quantization_mode);
 
 [PCM_t, PCM_signal] = encoder(fs, R, bit_stream, pulse_amplitude, line_code, bit_rate, n) ;
