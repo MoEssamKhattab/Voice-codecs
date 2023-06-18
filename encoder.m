@@ -2,11 +2,13 @@
 % 0 => Manchester Signaling
 % 1 => Alternate Mark Inversion Signaling
 
-function [PCM_t, PCM_signal] = encoder(fs, R, bit_stream, pulse_amplitude, line_code, bit_rate, n) %n #samples/bit === the number of samples representing each bit
+function [PCM_t, PCM_signal] = encoder(Fs, R, bit_stream, pulse_amplitude, line_code, bit_rate, n) %n #samples/bit === the number of samples representing each bit
     Tb = 1/bit_rate;    %bit duration
-    Ts = 1/fs;
+    Ts = 1/Fs;
 
     if (Ts < R*Tb)
+        display(Ts);
+        display(R*Tb);
         warning("Not valid! the sampling period must be larger than the bit frame total duration!");
     end
 

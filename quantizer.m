@@ -1,10 +1,11 @@
 % Quantization Mode
-    % 0 => Mid rise
-    % 1 => Mid tread
+    % 0 = Mid rise
+    % 1 = Mid tread
 
-function [quantized_signal, mean_sqr_q_error, bit_stream] = quantizer(input_signal, t, mp_max, mp_min, L, quantization_mode)
-    
-    delta = (mp_max-mp_min)/L;  %step size
+function [quantized_signal, mean_sqr_q_error, bit_stream,  mp_max, mp_min, R] = quantizer(input_signal, t, L, quantization_mode)
+    mp_max = max(input_signal);   %output, to be used by the decoder
+    mp_min = min(input_signal);   %...
+    delta = (mp_max-mp_min)/L;    %step size
 
     if(quantization_mode == 0)  %mid rise
         %Initializing quantization levels
@@ -60,12 +61,11 @@ function [quantized_signal, mean_sqr_q_error, bit_stream] = quantizer(input_sign
     % represinting the bit stream (since the indices are positive intger, easy to be mapped into binary numbers and vice versa)
     
     index = index-1;    %for 0 to be included in the binary representation of the indices
-    bit_frame_size = ceil(log2(L));    %ciel is used in case L is not binary weighted
-    
-    bit_stream = int2bit(index,bit_frame_size);
+    R = ceil(log2(L));  %bit frame size     %ciel is used in case L is not binary weighted
+
+    bit_stream = int2bit(index,R);
     bit_stream = reshape(bit_stream, 1, numel(bit_stream));
     
-    display('Bit stream: ');
-    display(bit_stream(1:20));
-    
+    display('Bit stream (first 20 bits):');
+    display(bit_stream(1:20));    
 end
