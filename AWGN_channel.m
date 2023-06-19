@@ -9,4 +9,5 @@ function [noisy_signal] = AWGN_channel(t, signal, N0, n)  %N0 noise power in dB
     xlabel('t [sec]');
     ylabel('Amplitude');
     title('Noisy PCM signal first 20 bits');
+    legend('Channel output');
 end

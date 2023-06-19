@@ -46,5 +46,9 @@ function [regenerated_PCM_signal] = regenerative_repeater(t, PCM_signal, n, line
 
     nexttile
     plot(t(1: 20*n),regenerated_PCM_signal(1: 20*n));
-
+    hold on
+    xlabel('t [sec]');
+    ylabel('Amplitude');
+    title('Regenerated PCM signal first 20 bits');
+    legend('Regenerative repeater output');
 end

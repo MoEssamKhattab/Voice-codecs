@@ -49,4 +49,5 @@ function [PCM_t, PCM_signal] = encoder(Fs, R, bit_stream, pulse_amplitude, line_
     xlabel('bits');
     ylabel('Amplitude');
     title(strcat(figure_title, ' first 20 bits'));
+    legend('Encoder output');
 end

@@ -40,5 +40,5 @@ function [restored_bit_stream, restored_quantized_signal] = decoder(t, PCM_signa
     xlabel('t [sec]');
     ylabel('Amplitude');
     title('The restored quantized signal');
-
+    legend('Decoder output');
 end
