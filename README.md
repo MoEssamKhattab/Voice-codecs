@@ -7,9 +7,3 @@ A PCM-Based Vocoder/Decoder, a voice codec software based on PCM of voice signal
 <img src = "./figures/pcm-based-vocoder-decoder.png" title="PCM-based Vocoder/Decoder">
 <figcaption align="center"><i>fig. 1 PCM-based Vocoder/Decoder</i></figcaption>
 </figure>
-
-
-```mermaid
-flowchart LR
-    Sampler --> Quantizer --> Encoder --> id1[PCM signal\napplied to\nchannel input]
-```
