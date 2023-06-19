@@ -1,7 +1,7 @@
 function [regenerated_PCM_signal] = regenerative_repeater(t, PCM_signal, n, line_code, pulse_amplitude)
     
-    A = pulse_amplitude; %for simplicity
-    pulse = zeros(1,n);   %Current pulse in the PCM signal
+    A = pulse_amplitude;    %for simplicity
+    pulse = zeros(1,n);     %Current pulse in the PCM signal
     regenerated_PCM_signal = zeros(1, length(PCM_signal));   %initializing the regenerated PCM signal
 
     if(line_code == 0)  %Manchester code
@@ -22,20 +22,15 @@ function [regenerated_PCM_signal] = regenerative_repeater(t, PCM_signal, n, line
         end
         
     elseif (line_code == 1) %AMI code
-        %pulse 1 shapes will be correlated with the absolute value of the current pulse 
-        pulse_1 = A*ones(1,n);
-        pulse_0 = zeros(1,n);
-
+        %threshold = abs((max(PCM_signal)-min(PCM_signal))/4);    %considering the attenuation and DC-shift the PCM signal may undergo through the channel
         for i=1 : n : length(PCM_signal)-n
             pulse = PCM_signal(i:i+n-1);    %current pulse
 
-            %%Corellating each pulse with 0&1 pulse shapes
-            corr_with_1 = xcorr(abs(pulse), pulse_1);
-            corr_with_0 = xcorr(pulse, pulse_0);
-            
-            if (max(corr_with_1) > max(corr_with_0))
+            %%Corellating each pulse with 0&1 pulse shapes            
+            %if (abs(mean(pulse)) > threshold)
+            if (abs(mean(pulse)) > (abs(A)/2))
                 regenerated_PCM_signal(i:i+n-1) = A;
-                A = -A;
+                A = -A;               
             end
             %for the 0, the regenerated_PCM_signal is already initialized
             %by zeros

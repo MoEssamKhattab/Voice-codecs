@@ -40,7 +40,7 @@ function [restored_bit_stream] = correlator_reciever(PCM_signal, n, line_code, p
             corr_with_1 = xcorr(abs(pulse), pulse_1);
             corr_with_0 = xcorr(pulse, pulse_0);
 
-            index = floor(i/n)+1;
+            index = floor(i/n)+1;   %index of the current bit in the restored bit stream 
             
             if (max(corr_with_1) > max(corr_with_0))
                 restored_bit_stream(index) = 1;
