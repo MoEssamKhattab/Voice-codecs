@@ -7,3 +7,68 @@ A PCM-Based Vocoder/Decoder, a voice codec software based on PCM of voice signal
 <img src = "./figures/pcm-based-vocoder-decoder.png" title="PCM-based Vocoder/Decoder">
 <figcaption align="center"><i>fig. 1 PCM-based Vocoder/Decoder</i></figcaption>
 </figure>
+
+## Test case I
+### Sampler
+- The required sampling rate, fs = 5 KHz.
+- The actual sampling rate after the downsampling, Fs = 4.8 KHz.
+
+### Quantizer
+- Quantization Mode: Mid rise.
+- Number of levels, L = 256.
+
+### Encoder
+- Line Code: Manchester Signaling.
+- Pulse Amplitude = 5 volt.
+- Bit Rate, Rb = 10K bit/sec.
+
+### Channel (AWGN-channel)
+- Noise Power = 4 dB.
+
+### Results
+#### Quantizer Output
+<figure>
+<img src = ".\figures\Midrise_Manchester,Fs=2.8k, L=256, Rb=10k, n=100, N0=4\input_sig_vs_quantized_sig.png" title="Input Signal vs. Quantized Signal">
+<figcaption align="center"><i>fig. 2 Input Signal vs. Quantized Signal</i></figcaption>
+</figure>
+
+The following figure (Fig. 3) may show the output of the quantizer, and the difference between the input audio signal and the quantized signal more properly.
+
+<figure>
+<img src = ".\figures\Midrise_Manchester,Fs=2.8k, L=256, Rb=10k, n=100, N0=4\input_sig_vs_quantized_sig_2.png" title="Input Signal vs. Quantized Signal">
+<figcaption align="center"><i>fig. 3 Input Signal vs. Quantized Signal</i></figcaption>
+</figure>
+
+#### Encoder Output
+<figure>
+<img src = ".\figures\Midrise_Manchester,Fs=2.8k, L=256, Rb=10k, n=100, N0=4\Encoder_output.png" title="Encoder Output">
+<figcaption align="center"><i>fig. 4 Encoder Output</i></figcaption>
+</figure>
+
+#### Channel Output
+
+<figure>
+<img src = ".\figures\Midrise_Manchester,Fs=2.8k, L=256, Rb=10k, n=100, N0=4\Channel_output.png" title="Channel Output">
+<figcaption align="center"><i>fig. 5 Channel Output</i></figcaption>
+</figure>
+
+#### Regenerative Repeater Output
+
+<figure>
+<img src = ".\figures\Midrise_Manchester,Fs=2.8k, L=256, Rb=10k, n=100, N0=4\Regenerative_Repeater_output.png" title="Regenerative Repeater Output">
+<figcaption align="center"><i>fig. 6 Regenerative Repeater Output</i></figcaption>
+</figure>
+
+#### Decoder Output
+
+<figure>
+<img src = ".\figures\Midrise_Manchester,Fs=2.8k, L=256, Rb=10k, n=100, N0=4\Decoder_output.png" title="Decoder Output">
+<figcaption align="center"><i>fig. 7 Decoder Output (The Restored Signal)</i></figcaption>
+</figure>
+
+The following figure (Fig. 8) may show the output of the decoder, the restored signal, more properly.
+
+<figure>
+<img src = ".\figures\Midrise_Manchester,Fs=2.8k, L=256, Rb=10k, n=100, N0=4\Decoder_output_2.png" title="Decoder Output">
+<figcaption align="center"><i>fig. 8 Decoder Output (The Restored Signal)</i></figcaption>
+</figure>
