@@ -9,20 +9,21 @@ A PCM-Based Vocoder/Decoder, a voice codec software based on PCM of voice signal
 </figure>
 
 ## Test case I
-### Sampler
+### Modules Configuration
+#### Sampler
 - The required sampling rate, fs = 5 KHz.
 - The actual sampling rate after the downsampling, Fs = 4.8 KHz.
 
-### Quantizer
+#### Quantizer
 - Quantization Mode: Mid rise.
 - Number of levels, L = 256.
 
-### Encoder
+#### Encoder
 - Line Code: Manchester Signaling.
 - Pulse Amplitude = 5 volt.
 - Bit Rate, Rb = 10K bit/sec.
 
-### Channel (AWGN-channel)
+#### Channel (AWGN-channel)
 - Noise Power = 4 dB.
 
 ### Results
