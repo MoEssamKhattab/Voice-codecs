@@ -25,7 +25,7 @@ A PCM-Based Vocoder/Decoder, a voice codec software based on PCM of voice signal
 
 #### Channel (AWGN-channel)
 - Noise Power = 4 dB.
-
+---
 ### Results
 #### Quantizer Output
 <figure>
