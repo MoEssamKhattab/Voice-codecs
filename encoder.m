@@ -7,8 +7,6 @@ function [PCM_t, PCM_signal] = encoder(Fs, R, bit_stream, pulse_amplitude, line_
     Ts = 1/Fs;
 
     if (Ts < R*Tb)
-        display(Ts);
-        display(R*Tb);
         warning("Not valid! the sampling period must be larger than the bit frame total duration!");
     end
 
