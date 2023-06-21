@@ -28,6 +28,11 @@ A PCM-Based Vocoder/Decoder, a voice codec software based on PCM of voice signal
 ---
 ### Results
 #### Quantizer Output
+Bit stream (first 20 bits):
+
+| 1 | 0 | 0 | 0 | 0 | 1 | 1 | 1 | 1 | 0 | 0 | 0 | 0 | 1 | 1 | 1 | 1 | 0 | 0 | 0 |
+|-|-|-|-|-|-|-|-|-|-|-|-|-|-|-|-|-|-|-|-|
+
 <figure>
 <img src = ".\figures\Midrise_Manchester,Fs=2.8k, L=256, Rb=10k, n=100, N0=4\input_sig_vs_quantized_sig.png" title="Input Signal vs. Quantized Signal">
 <figcaption Align="center"><i>fig. 2 Input Signal vs. Quantized Signal</i></figcaption>
