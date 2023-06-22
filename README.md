@@ -34,10 +34,6 @@ https://github.com/MoEssamKhattab/Voice-codecs/assets/95503706/f959a054-01f9-4a8
 
 
 #### Quantizer Output
-Bit stream (first 20 bits):
-
-| 1 | 0 | 0 | 0 | 0 | 1 | 1 | 1 | 1 | 0 | 0 | 0 | 0 | 1 | 1 | 1 | 1 | 0 | 0 | 0 |
-|-|-|-|-|-|-|-|-|-|-|-|-|-|-|-|-|-|-|-|-|
 
 <figure>
 <img src = ".\figures\Midrise_Manchester,Fs=2.8k, L=256, Rb=10k, n=100, N0=4\input_sig_vs_quantized_sig.png" title="Input Signal vs. Quantized Signal">
@@ -51,11 +47,20 @@ The following figure (Fig. 3) may show the output of the quantizer, and the diff
 <figcaption Align="center"><i>fig. 3 Input Signal vs. Quantized Signal</i></figcaption>
 </figure>
 
+Bit stream (first 20 bits):
+
+| 1 | 0 | 0 | 0 | 0 | 1 | 1 | 1 | 1 | 0 | 0 | 0 | 0 | 1 | 1 | 1 | 1 | 0 | 0 | 0 |
+|-|-|-|-|-|-|-|-|-|-|-|-|-|-|-|-|-|-|-|-|
+---
 #### Encoder Output
 <figure>
 <img src = ".\figures\Midrise_Manchester,Fs=2.8k, L=256, Rb=10k, n=100, N0=4\Encoder_output.png" title="Encoder Output">
 <figcaption Align="center"><i>fig. 4 Encoder Output</i></figcaption>
 </figure>
+
+We can see that the line code properly matches the output bit stream of the quantizer.
+
+---
 
 #### Channel Output
 
@@ -64,12 +69,16 @@ The following figure (Fig. 3) may show the output of the quantizer, and the diff
 <figcaption Align="center"><i>fig. 5 Channel Output</i></figcaption>
 </figure>
 
+---
+
 #### Regenerative Repeater Output
 
 <figure>
 <img src = ".\figures\Midrise_Manchester,Fs=2.8k, L=256, Rb=10k, n=100, N0=4\Regenerative_Repeater_output.png" title="Regenerative Repeater Output">
 <figcaption Align="center"><i>fig. 6 Regenerative Repeater Output</i></figcaption>
 </figure>
+
+---
 
 #### Decoder Output
 
@@ -89,5 +98,3 @@ The following figure (Fig. 8) may show the output of the decoder, the restored s
 
 
 https://github.com/MoEssamKhattab/Voice-codecs/assets/95503706/ff339c19-6f3f-4764-83cd-0848ab8b36d0
-
-
