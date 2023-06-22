@@ -84,3 +84,10 @@ The following figure (Fig. 8) may show the output of the decoder, the restored s
 <img src = ".\figures\Midrise_Manchester,Fs=2.8k, L=256, Rb=10k, n=100, N0=4\Decoder_output_2.png" title="Decoder Output">
 <figcaption Align="center"><i>fig. 8 Decoder Output (The Restored Signal)</i></figcaption>
 </figure>
+
+#### Output Audio Signal
+
+
+https://github.com/MoEssamKhattab/Voice-codecs/assets/95503706/ff339c19-6f3f-4764-83cd-0848ab8b36d0
+
+
