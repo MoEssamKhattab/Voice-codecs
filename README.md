@@ -27,6 +27,8 @@ A PCM-Based Vocoder/Decoder, a voice codec software based on PCM of voice signal
 - Noise Power = 4 dB.
 ---
 ### Results
+#### Input audio signal
+
 #### Quantizer Output
 Bit stream (first 20 bits):
 
