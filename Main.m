@@ -1,7 +1,7 @@
 %% Test case I
 %{
 %Reading the audio signal
-[signal, fm] = audioread('input_audio.mp3');
+[signal, fm] = audioread('input_audio.wav');
 input_signal = signal(:,1);   %only the left channel of the input signal
 sound(input_signal, fm);
 
@@ -31,7 +31,7 @@ sound(restored_quantized_signal, Fs);
 %% Test case II
 
 %Reading the audio signal
-[signal, fm] = audioread('input_audio.mp3');
+[signal, fm] = audioread('input_audio.wav');
 input_signal = signal(:,1);   %only the left channel of the input signal
 sound(input_signal, fm);
 
@@ -40,12 +40,12 @@ fs = 50e2;  %the required sampling rate
 [t, sampled_signal, Fs] = sampler(input_signal, fm, fs);
 
 %Quantizer
-quantization_mode  = 0;     %Mid rise
+quantization_mode  = 1;
 L = 256;                    %the number of quantization levels
 [quantized_signal, mean_sqr_q_error, bit_stream, mp_max, mp_min, R] = quantizer(sampled_signal, t, L, quantization_mode);
 
 %Encoder
-line_code = 0;
+line_code = 1;
 pulse_amplitude = 5;
 bit_rate = 10000;
 n = 100;

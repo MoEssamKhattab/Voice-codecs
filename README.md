@@ -37,6 +37,7 @@ A PCM-Based Vocoder/Decoder, a voice codec software based on PCM of voice signal
 
 The following figure (Fig. 3) may show the output of the quantizer, and the difference between the input audio signal and the quantized signal more properly.
 
+
 <figure align="center">
 <img src = ".\figures\Midrise_Manchester,Fs=2.8k, L=256, Rb=10k, n=100, N0=4\input_sig_vs_quantized_sig_2.png" title="Input Signal vs. Quantized Signal">
 <figcaption Align="center"><i>fig. 3 Input Signal vs. Quantized Signal</i></figcaption>
@@ -75,6 +76,9 @@ We can see that the line code properly matches the output bit stream of the quan
 <figcaption Align="center"><i>fig. 6 Regenerative Repeater Output</i></figcaption>
 </figure>
 
+
+The regeneraative repeaters can successfully restore the PCM signal back from its noisy version. We can see that the output of the regenerative repeater is exactly the same as the output of the encoder.
+
 ---
 
 #### Decoder Output
@@ -96,3 +100,99 @@ The following figure (Fig. 8) may show the output of the decoder, the restored s
 | Input Signal | Output Signal |
 | --- | --- |
 | <video src="https://github.com/MoEssamKhattab/Voice-codecs/assets/95503706/f959a054-01f9-4a81-9f4e-97de8766b173"> | <video src="https://github.com/MoEssamKhattab/Voice-codecs/assets/95503706/ff339c19-6f3f-4764-83cd-0848ab8b36d0"> |
+
+## Test case II
+### Modules Configuration
+#### Sampler
+- The required sampling rate, fs = 5 KHz.
+- The actual sampling rate after the downsampling, Fs = 4.8 KHz.
+
+#### Quantizer
+- Quantization Mode: Mid tread.
+- Number of levels: L = 256.
+
+#### Encoder
+- Line Code: AMI Signaling.
+- Pulse Amplitude = 5 volt.
+- Bit Rate, Rb = 10K bit/sec.
+
+#### Channel (AWGN-channel)
+- Noise Power = 4 dB.
+---
+### Results
+#### Quantizer Output
+
+<figure>
+<img src = ".\figures\Midtread_AMI, Fs=2.8k, L=256, Rb=10k, n=100, N0=4\input_sig_vs_quantized_sig.png" title="Input Signal vs. Quantized Signal">
+<figcaption Align="center"><i>fig. 9 Input Signal vs. Quantized Signal</i></figcaption>
+</figure>
+
+
+The following figure (Fig. 3) may show the output of the quantizer, and the difference between the input audio signal and the quantized signal more properly.
+
+
+<figure align="center">
+<img src = ".\figures\Midtread_AMI, Fs=2.8k, L=256, Rb=10k, n=100, N0=4\input_sig_vs_quantized_sig_2.png" title="Input Signal vs. Quantized Signal">
+<figcaption Align="center"><i>fig. 10 Input Signal vs. Quantized Signal</i></figcaption>
+</figure>
+
+
+Bit stream (first 20 bits):
+
+| 1 | 0 | 0 | 0 | 0 | 1 | 1 | 1 | 1 | 0 | 0 | 0 | 0 | 1 | 1 | 1 | 1 | 0 | 0 | 0 |
+|-|-|-|-|-|-|-|-|-|-|-|-|-|-|-|-|-|-|-|-|
+---
+#### Encoder Output
+<figure>
+<img src = ".\figures\Midtread_AMI, Fs=2.8k, L=256, Rb=10k, n=100, N0=4\Encoder_output.png" title="Encoder Output">
+<figcaption Align="center"><i>fig. 11 Encoder Output</i></figcaption>
+</figure>
+
+
+We can see that the line code properly matches the output bit stream of the quantizer.
+
+---
+
+#### Channel Output
+
+<figure>
+<img src = ".\figures\Midtread_AMI, Fs=2.8k, L=256, Rb=10k, n=100, N0=4\Channel_output.png" title="Channel Output">
+<figcaption Align="center"><i>fig. 12 Channel Output</i></figcaption>
+</figure>
+
+---
+
+#### Regenerative Repeater Output
+
+<figure>
+<img src = ".\figures\Midtread_AMI, Fs=2.8k, L=256, Rb=10k, n=100, N0=4\Regenerative_Repeater_output.png" title="Regenerative Repeater Output">
+<figcaption Align="center"><i>fig. 13 Regenerative Repeater Output</i></figcaption>
+</figure>
+
+
+The regeneraative repeaters can successfully restore the PCM signal back from its noisy version. We can see that the output of the regenerative repeater is exactly the same as the output of the encoder.
+
+---
+
+#### Decoder Output
+
+<figure>
+<img src = ".\figures\Midtread_AMI, Fs=2.8k, L=256, Rb=10k, n=100, N0=4\Decoder_output.png" title="Decoder Output">
+<figcaption Align="center"><i>fig. 14 Decoder Output (The Restored Signal)</i></figcaption>
+</figure>
+
+
+The following figure (Fig. 15) may show the output of the decoder, the restored signal, more properly.
+
+<figure Align = "center">
+<img src = ".\figures\Midtread_AMI, Fs=2.8k, L=256, Rb=10k, n=100, N0=4\Decoder_output_2.png" title="Decoder Output">
+<figcaption Align="center"><i>fig. 15 Decoder Output (The Restored Signal)</i></figcaption>
+</figure>
+
+#### Output Audio Signal vs. Input Signal
+| Input Signal | Output Signal |
+| --- | --- |
+| <video src="https://github.com/MoEssamKhattab/Voice-codecs/assets/95503706/f959a054-01f9-4a81-9f4e-97de8766b173"> |  |
+
+
+The result in case of the mid-rise quantization technique with Manchester line code are the same as the case of mid-tred and AMI signaling.
