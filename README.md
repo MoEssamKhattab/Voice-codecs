@@ -27,12 +27,6 @@ A PCM-Based Vocoder/Decoder, a voice codec software based on PCM of voice signal
 - Noise Power = 4 dB.
 ---
 ### Results
-#### Input audio signal
-
-
-https://github.com/MoEssamKhattab/Voice-codecs/assets/95503706/f959a054-01f9-4a81-9f4e-97de8766b173
-
-
 #### Quantizer Output
 
 <figure>
@@ -40,12 +34,14 @@ https://github.com/MoEssamKhattab/Voice-codecs/assets/95503706/f959a054-01f9-4a8
 <figcaption Align="center"><i>fig. 2 Input Signal vs. Quantized Signal</i></figcaption>
 </figure>
 
+
 The following figure (Fig. 3) may show the output of the quantizer, and the difference between the input audio signal and the quantized signal more properly.
 
 <figure align="center">
 <img src = ".\figures\Midrise_Manchester,Fs=2.8k, L=256, Rb=10k, n=100, N0=4\input_sig_vs_quantized_sig_2.png" title="Input Signal vs. Quantized Signal">
 <figcaption Align="center"><i>fig. 3 Input Signal vs. Quantized Signal</i></figcaption>
 </figure>
+
 
 Bit stream (first 20 bits):
 
@@ -57,6 +53,7 @@ Bit stream (first 20 bits):
 <img src = ".\figures\Midrise_Manchester,Fs=2.8k, L=256, Rb=10k, n=100, N0=4\Encoder_output.png" title="Encoder Output">
 <figcaption Align="center"><i>fig. 4 Encoder Output</i></figcaption>
 </figure>
+
 
 We can see that the line code properly matches the output bit stream of the quantizer.
 
@@ -87,6 +84,7 @@ We can see that the line code properly matches the output bit stream of the quan
 <figcaption Align="center"><i>fig. 7 Decoder Output (The Restored Signal)</i></figcaption>
 </figure>
 
+
 The following figure (Fig. 8) may show the output of the decoder, the restored signal, more properly.
 
 <figure Align = "center">
@@ -94,7 +92,6 @@ The following figure (Fig. 8) may show the output of the decoder, the restored s
 <figcaption Align="center"><i>fig. 8 Decoder Output (The Restored Signal)</i></figcaption>
 </figure>
 
-#### Output Audio Signal
+#### Output Audio Signal vs. Input Signal
 
-
-https://github.com/MoEssamKhattab/Voice-codecs/assets/95503706/ff339c19-6f3f-4764-83cd-0848ab8b36d0
+| https://github.com/MoEssamKhattab/Voice-codecs/assets/95503706/f959a054-01f9-4a81-9f4e-97de8766b173 | https://github.com/MoEssamKhattab/Voice-codecs/assets/95503706/ff339c19-6f3f-4764-83cd-0848ab8b36d0 |
