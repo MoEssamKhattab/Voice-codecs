@@ -29,6 +29,10 @@ A PCM-Based Vocoder/Decoder, a voice codec software based on PCM of voice signal
 ### Results
 #### Input audio signal
 
+
+https://github.com/MoEssamKhattab/Voice-codecs/assets/95503706/f959a054-01f9-4a81-9f4e-97de8766b173
+
+
 #### Quantizer Output
 Bit stream (first 20 bits):
 
