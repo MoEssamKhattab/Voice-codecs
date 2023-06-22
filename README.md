@@ -192,7 +192,7 @@ The following figure (Fig. 15) may show the output of the decoder, the restored 
 #### Output Audio Signal vs. Input Signal
 | Input Signal | Output Signal |
 | --- | --- |
-| <video src="https://github.com/MoEssamKhattab/Voice-codecs/assets/95503706/f959a054-01f9-4a81-9f4e-97de8766b173"> |  |
+| <video src="https://github.com/MoEssamKhattab/Voice-codecs/assets/95503706/f959a054-01f9-4a81-9f4e-97de8766b173"> | <video src="https://github.com/MoEssamKhattab/Voice-codecs/assets/95503706/ca91115c-302a-4559-b455-b433ff680e81" |
 
 
 The result in case of the mid-rise quantization technique with Manchester line code are the same as the case of mid-tred and AMI signaling.
