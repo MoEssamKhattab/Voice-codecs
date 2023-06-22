@@ -93,6 +93,10 @@ The following figure (Fig. 8) may show the output of the decoder, the restored s
 </figure>
 
 #### Output Audio Signal vs. Input Signal
+- Input Signal
 
-| https://github.com/MoEssamKhattab/Voice-codecs/assets/95503706/f959a054-01f9-4a81-9f4e-97de8766b173 | https://github.com/MoEssamKhattab/Voice-codecs/assets/95503706/ff339c19-6f3f-4764-83cd-0848ab8b36d0 |
-| --- | --- |
+https://github.com/MoEssamKhattab/Voice-codecs/assets/95503706/f959a054-01f9-4a81-9f4e-97de8766b173
+
+- Output Signal
+
+https://github.com/MoEssamKhattab/Voice-codecs/assets/95503706/ff339c19-6f3f-4764-83cd-0848ab8b36d0
