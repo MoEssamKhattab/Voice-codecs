@@ -40,7 +40,7 @@ Bit stream (first 20 bits):
 
 The following figure (Fig. 3) may show the output of the quantizer, and the difference between the input audio signal and the quantized signal more properly.
 
-<figure>
+<figure align="center">
 <img src = ".\figures\Midrise_Manchester,Fs=2.8k, L=256, Rb=10k, n=100, N0=4\input_sig_vs_quantized_sig_2.png" title="Input Signal vs. Quantized Signal">
 <figcaption Align="center"><i>fig. 3 Input Signal vs. Quantized Signal</i></figcaption>
 </figure>
