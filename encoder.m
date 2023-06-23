@@ -29,7 +29,7 @@ function [PCM_t, PCM_signal] = encoder(Fs, R, bit_stream, pulse_amplitude, line_
             end
         end
         
-        figure_title = 'Manchester Signaling';
+        figure_title = 'Manchester Signal';
     
     elseif(line_code == 1)  %  AMI Signaling
         for i=1 : length(bit_stream)
@@ -39,12 +39,12 @@ function [PCM_t, PCM_signal] = encoder(Fs, R, bit_stream, pulse_amplitude, line_
             % for 0 bits, the PCM signal is already initialized by zeros
             end
         end
-        figure_title = 'AMI Signaling';
+        figure_title = 'AMI Signal';
     end
 
     nexttile
     plot(PCM_t(1: 20*n),PCM_signal(1 : 20*n));    %Plotting the first 10 bits only
-    xlabel('bits');
+    xlabel('t[sec.]');
     ylabel('Amplitude');
     title(strcat(figure_title, ' first 20 bits'));
     legend('Encoder output');

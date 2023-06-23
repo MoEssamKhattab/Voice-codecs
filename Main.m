@@ -63,3 +63,4 @@ regenerated_PCM_signal = regenerative_repeater(PCM_t, noisy_signal, n, line_code
 sound(restored_quantized_signal, Fs);
 
 %audiowrite("restored_signal.wav", restored_quantized_signal, Fs)
+%%uncomment to export the restored signal file
