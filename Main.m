@@ -62,4 +62,4 @@ regenerated_PCM_signal = regenerative_repeater(PCM_t, noisy_signal, n, line_code
 [restored_bit_stream, restored_quantized_signal] = decoder(t, regenerated_PCM_signal, mp_max, mp_min, L, quantization_mode, line_code, n, pulse_amplitude);
 sound(restored_quantized_signal, Fs);
 
-audiowrite("restored_signal.wav", restored_quantized_signal, Fs)
+%audiowrite("restored_signal.wav", restored_quantized_signal, Fs)

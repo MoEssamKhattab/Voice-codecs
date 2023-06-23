@@ -139,7 +139,7 @@ The following figure (Fig. 3) may show the output of the quantizer, and the diff
 
 Bit stream (first 20 bits):
 
-| 1 | 0 | 0 | 0 | 0 | 1 | 1 | 1 | 1 | 0 | 0 | 0 | 0 | 1 | 1 | 1 | 1 | 0 | 0 | 0 |
+| 1 | 0 | 0 | 0 | 0 | 1 | 1 | 0 | 1 | 0 | 0 | 0 | 0 | 1 | 1 | 0 | 1 | 0 | 0 | 0 |
 |-|-|-|-|-|-|-|-|-|-|-|-|-|-|-|-|-|-|-|-|
 ---
 #### Encoder Output
