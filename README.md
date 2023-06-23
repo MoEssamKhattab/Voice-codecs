@@ -56,7 +56,7 @@ Bit stream (first 20 bits):
 </figure>
 
 
-We can see that the line code properly matches the output bit stream of the quantizer.
+We can see that the line code properly matches the the quantizer output bit stream.
 
 ---
 
@@ -149,7 +149,7 @@ Bit stream (first 20 bits):
 </figure>
 
 
-We can see that the line code properly matches the output bit stream of the quantizer.
+We can see that the line code properly matches the the quantizer output bit stream.
 
 ---
 
