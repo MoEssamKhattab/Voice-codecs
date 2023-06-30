@@ -8,6 +8,38 @@ A PCM-Based Vocoder/Decoder, a voice codec software based on PCM of voice signal
 <figcaption align="center"><i>fig. 1 PCM-based Vocoder/Decoder</i></figcaption>
 </figure>
 
+## Requirements
+A function for each of the system blocks is required as follows:
+1. The Sampler function, with the required sampling frequency as input.
+2. The Quantizer function should have the option that the user chooses between:
+* Mid-rise Uniform quantizer
+* Mid-tread Uniform quantizer
+
+For each, the user specifies the number of levels, L, the peak quantization level, mp.
+The function should allow the user to input a signal to be quantized. That signal will be in the form of two vectors, a time vector and an amplitude vector.
+
+This function should also result in the following:
+* A figure showing the input signal and the quantized signal, on the same plot, with proper legend.
+
+*Note: Display the input signal as a continuous signal, and display the quantized signal as a continuous staircase signal.*
+* The value of the mean square quantization error, i.e. E{(m − ν)2}.
+
+* A stream of bits representing the quantized signal.
+3. The Encoder function is required to represent the bit stream resulting from the quantizer as a signal. This function should have the option that the user chooses between:
+* Manchester Signaling.
+* Alternate Mark Inversion Signaling.
+
+For each, the user specifies the pulse amplitude and the bit duration.
+
+*Note that the bit duration is related to the sampling rate and the number of bits of the Quantizer.*
+
+4. The Decoder function is required to transform received PCM coded pulses into a stream of bits, then transform each log2(L) bits into a quantized sample.
+
+This function should result in an output plot of the quantized samples.
+This function should have parameters matching those of the Quantizer and Encoder functions.
+
+---
+
 ## Test case I
 ### Modules Configuration
 #### Sampler
