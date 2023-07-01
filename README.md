@@ -14,10 +14,10 @@ A function for each of the system blocks is required as follows:
 
 2. The Quantizer function should have the option that the user chooses between:
 
-    * Mid-rise Uniform quantizer
-    * Mid-tread Uniform quantizer
+    * Mid-rise Uniform quantizer.
+    * Mid-tread Uniform quantizer.
 
-For each, the user specifies the number of levels, L, the peak quantization level, mp.
+For each, the user specifies the number of levels, $L$, the peak quantization level, $m_p$.
 The function should allow the user to input a signal to be quantized. That signal will be in the form of two vectors, a time vector and an amplitude vector.
 
 This function should also result in the following:
@@ -26,7 +26,7 @@ This function should also result in the following:
 
 ***Note:** Display the input signal as a continuous signal, and display the quantized signal as a continuous staircase signal.*
 
-* The value of the mean square quantization error, i.e. $E{(m − ν)^2}$.
+* The value of the mean square quantization error, i.e. $E\{(m − ν)^2\}$.
 
 * A stream of bits representing the quantized signal.
 
@@ -37,7 +37,7 @@ This function should also result in the following:
 
 For each, the user specifies the pulse amplitude and the bit duration.
 
-***Note** that the bit duration is related to the sampling rate and the number of bits of the Quantizer.*
+***Note:** that the bit duration is related to the sampling rate and the number of bits of the Quantizer.*
 
 4. The Decoder function is required to transform received PCM coded pulses into a stream of bits, then transform each $log_2(L)$ bits into a quantized sample.
 
@@ -71,11 +71,11 @@ This function should have parameters matching those of the Quantizer and Encoder
 
 <figure>
 <img src = ".\figures\Midrise_Manchester,Fs=2.8k, L=256, Rb=10k, n=100, N0=4\input_sig_vs_quantized_sig.png" title="Input Signal vs. Quantized Signal">
-<figcaption Align="center"><i>fig. 2 Input Signal vs. Quantized Signal</i></figcaption>
+<figcaption style="text-align:center"><i>fig. 2 Input Signal vs. Quantized Signal</i></figcaption>
 </figure>
 
 
-The following figure (Fig. 3) may show the output of the quantizer, and the difference between the input audio signal and the quantized signal more properly.
+The following figure *(Fig. 3)* may show the output of the quantizer, and the difference between the input audio signal and the quantized signal more properly.
 
 
 <figure align="center">
@@ -84,7 +84,7 @@ The following figure (Fig. 3) may show the output of the quantizer, and the diff
 </figure>
 
 
-Bit stream (first 20 bits):
+**Bit stream *(first 20 bits)*:**
 
 | 1 | 0 | 0 | 0 | 0 | 1 | 1 | 1 | 1 | 0 | 0 | 0 | 0 | 1 | 1 | 1 | 1 | 0 | 0 | 0 |
 |-|-|-|-|-|-|-|-|-|-|-|-|-|-|-|-|-|-|-|-|
@@ -131,7 +131,7 @@ The regeneraative repeaters can successfully restore the PCM signal back from it
 </figure>
 
 
-The following figure (Fig. 8) may show the output of the decoder, the restored signal, more properly.
+The following figure *(Fig. 8)* may show the output of the decoder, the restored signal, more properly.
 
 <figure Align = "center">
 <img src = ".\figures\Midrise_Manchester,Fs=2.8k, L=256, Rb=10k, n=100, N0=4\Decoder_output_2.png" title="Decoder Output">
@@ -170,7 +170,7 @@ The following figure (Fig. 8) may show the output of the decoder, the restored s
 </figure>
 
 
-The following figure (Fig. 3) may show the output of the quantizer, and the difference between the input audio signal and the quantized signal more properly.
+The following figure *(Fig. 3)* may show the output of the quantizer, and the difference between the input audio signal and the quantized signal more properly.
 
 
 <figure align="center">
@@ -179,7 +179,7 @@ The following figure (Fig. 3) may show the output of the quantizer, and the diff
 </figure>
 
 
-Bit stream (first 20 bits):
+**Bit stream *(first 20 bits)*:**
 
 | 1 | 0 | 0 | 0 | 0 | 1 | 1 | 0 | 1 | 0 | 0 | 0 | 0 | 1 | 1 | 0 | 1 | 0 | 0 | 0 |
 |-|-|-|-|-|-|-|-|-|-|-|-|-|-|-|-|-|-|-|-|
@@ -224,7 +224,7 @@ The regeneraative repeaters can successfully restore the PCM signal back from it
 </figure>
 
 
-The following figure (Fig. 15) may show the output of the decoder, the restored signal, more properly.
+The following figure *(Fig. 15)* may show the output of the decoder, the restored signal, more properly.
 
 <figure Align = "center">
 <img src = ".\figures\Midtread_AMI, Fs=2.8k, L=256, Rb=10k, n=100, N0=4\Decoder_output_2.png" title="Decoder Output">
