@@ -69,9 +69,9 @@ This function should have parameters matching those of the Quantizer and Encoder
 ### Results
 #### Quantizer Output
 
-<figure>
+<figure align="center">
 <img src = ".\figures\Midrise_Manchester,Fs=2.8k, L=256, Rb=10k, n=100, N0=4\input_sig_vs_quantized_sig.png" title="Input Signal vs. Quantized Signal">
-<figcaption align=middle><i>fig. 2 Input Signal vs. Quantized Signal</i></figcaption>
+<figcaption align="center"><i>fig. 2 Input Signal vs. Quantized Signal</i></figcaption>
 </figure>
 
 
