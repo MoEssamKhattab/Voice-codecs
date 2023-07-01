@@ -58,11 +58,11 @@ This function should have parameters matching those of the Quantizer and Encoder
 
 #### Encoder
 - Line Code: Manchester Signaling.
-- Pulse Amplitude = $5 volt$.
-- Bit Rate, Rb = $10K bit/sec$.
+- Pulse Amplitude, $A = 5 volt$.
+- Bit Rate, $Rb = 10K bit/sec$.
 
 #### Channel (AWGN-channel)
-- Noise Power = $4 dB$.
+- $Noise Power = 4 dB$.
 
 ---
 
@@ -155,11 +155,11 @@ The following figure (Fig. 8) may show the output of the decoder, the restored s
 
 #### Encoder
 - Line Code: AMI Signaling.
-- Pulse Amplitude = $5 volt$.
-- Bit Rate, Rb = $10K bit/sec$.
+- Pulse Amplitude $A = 5 volt$.
+- Bit Rate, $Rb = 10K bit/sec$.
 
 #### Channel (AWGN-channel)
-- Noise Power = $4 dB$.
+- $Noise Power = 4 dB$.
 ---
 ### Results
 #### Quantizer Output
