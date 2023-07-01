@@ -71,7 +71,7 @@ This function should have parameters matching those of the Quantizer and Encoder
 
 <figure>
 <img src = ".\figures\Midrise_Manchester,Fs=2.8k, L=256, Rb=10k, n=100, N0=4\input_sig_vs_quantized_sig.png" title="Input Signal vs. Quantized Signal">
-<figcaption style="text-align:center"><i>fig. 2 Input Signal vs. Quantized Signal</i></figcaption>
+<figcaption align=middle><i>fig. 2 Input Signal vs. Quantized Signal</i></figcaption>
 </figure>
 
 
