@@ -24,7 +24,7 @@ This function should also result in the following:
 
 * A figure showing the input signal and the quantized signal, on the same plot, with proper legend.
 
-*Note: Display the input signal as a continuous signal, and display the quantized signal as a continuous staircase signal.*
+***Note:** Display the input signal as a continuous signal, and display the quantized signal as a continuous staircase signal.*
 
 * The value of the mean square quantization error, i.e. $E{(m − ν)^2}$.
 
