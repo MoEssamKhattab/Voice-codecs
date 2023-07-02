@@ -83,6 +83,7 @@ The following figure *(Fig. 3)* may show the output of the quantizer, and the di
 <figcaption Align="center"><i>fig. 3 Input Signal vs. Quantized Signal</i></figcaption>
 </figure>
 
+---
 
 **Bit stream *(first 20 bits)*:**
 
@@ -160,7 +161,9 @@ The following figure *(Fig. 8)* may show the output of the decoder, the restored
 
 #### Channel (AWGN-channel)
 - $Noise Power = 4 dB$.
+
 ---
+
 ### Results
 #### Quantizer Output
 
@@ -178,6 +181,7 @@ The following figure *(Fig. 3)* may show the output of the quantizer, and the di
 <figcaption Align="center"><i>fig. 10 Input Signal vs. Quantized Signal</i></figcaption>
 </figure>
 
+---
 
 **Bit stream *(first 20 bits)*:**
 
